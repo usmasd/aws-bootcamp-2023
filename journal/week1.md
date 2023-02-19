@@ -8,15 +8,15 @@ We will use Dockers to test and build Cruddur Application Frontend and Backend. 
 
 ### Install Prerequisites & Run Backend application locally
 
-Install prequistes and run Backend application locally to test the functionality.
+Lunch Gitpod workspace. Install prequistes run Backend application locally to test the functionality.
 
 ```sh
-cd backend-flask
-export FRONTEND_URL="*"
-export BACKEND_URL="*"
-pip3 install -r requirements.txt
-python3 -m flask run --host=0.0.0.0 --port=4567
-cd ..
+cd backend-flask                                   
+export FRONTEND_URL="*"                           
+export BACKEND_URL="*"                            
+pip3 install -r requirements.txt                  
+python3 -m flask run --host=0.0.0.0 --port=4567   
+cd ..                                             
 ```
 
 Test Backend application working fine.
