@@ -1,39 +1,34 @@
 # Week 1 — App Containerization
 
-## References
+We will use Dockers to test and build Cruddur Application Frontend and Backend. We will test and build containers individually and together as application using Docker Compose.
 
-Good Article for Debugging Connection Refused
-https://pythonspeed.com/articles/docker-connection-refused/
-
-
-## VSCode Docker Extension
-
-Docker for VSCode makes it easy to work with Docker
-
-https://code.visualstudio.com/docs/containers/overview
-
-> Gitpod is preinstalled with theis extension
+> Verify Gitpod is preinstalled with this extension
 
 ## Containerize Backend
 
-### Run Python
+### Install Prerequisites & Run Backend application locally
+
+Install prequistes and run Backend application locally to test the functionality.
 
 ```sh
 cd backend-flask
 export FRONTEND_URL="*"
 export BACKEND_URL="*"
+pip3 install -r requirements.txt
 python3 -m flask run --host=0.0.0.0 --port=4567
 cd ..
 ```
 
+Test Backend application working fine.
+
 - make sure to unlock the port on the port tab
-- open the link for 4567 in your browser
-- append to the url to `/api/activities/home`
-- you should get back json
+- open the link for `4567` in your browser
+- append to the url to `/api/activities/home` 
+- verify you should get back json
 
 
 
-### Add Dockerfile
+### Configure Dockerfile
 
 Create a file here: `backend-flask/Dockerfile`
 
@@ -53,15 +48,15 @@ EXPOSE ${PORT}
 CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=4567"]
 ```
 
-### Build Container
+### Build Container Image from Dockerfile
 
 ```sh
 docker build -t  backend-flask ./backend-flask
 ```
 
-### Run Container
+### Run Container Image
 
-Run 
+Run Container Image
 ```sh
 docker run --rm -p 4567:4567 -it backend-flask
 FRONTEND_URL="*" BACKEND_URL="*" docker run --rm -p 4567:4567 -it backend-flask
@@ -73,7 +68,7 @@ unset FRONTEND_URL="*"
 unset BACKEND_URL="*"
 ```
 
-Run in background
+Run Container Image in background
 ```sh
 docker container run --rm -p 4567:4567 -d backend-flask
 ```
