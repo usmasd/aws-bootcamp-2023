@@ -63,7 +63,7 @@ docker run --rm -p 4567:4567 -it -e FRONTEND_URL='*' -e BACKEND_URL='*' backend-
 
 Run Container Image in background
 ```sh
-docker container run --rm -p 4567:4567 -d backend-flask
+docker run --rm -p 4567:4567 -it -e FRONTEND_URL='*' -e BACKEND_URL='*' -d backend-flask
 ```
 
 Return the container id into an Env Vat
