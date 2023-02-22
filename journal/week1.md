@@ -166,7 +166,7 @@ CMD ["npm", "start"]
 docker build -t frontend-react-js ./frontend-react-js
 ```
 
-### Run Container
+### Run Frontend Container in Background 
 
 ```sh
 docker run -p 3000:3000 -d frontend-react-js
